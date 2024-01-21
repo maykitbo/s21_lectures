@@ -49,26 +49,8 @@ def random_grayscale(image):
 
 def apply_random_filters(image, probabilities=[0.3, 0.3, 0.2, 0.2],
                          print_filters: bool = False):
-    augmentations = [rotate_image,
-                     blur_image,
-                     flip,
-                     color_jitter,
-                     random_affine,
-                     random_erasing,
-                     add_noise,
-                     random_grayscale]
-
-
-    num_filters = np.random.choice(range(len(probabilities)), p=probabilities)
-
-    # Randomly select and apply the filters
-    for _ in range(num_filters):
-        func = random.choice(augmentations)
-        image = func(image)
-        if print_filters:
-            print(func.__name__())
-
-    return image
+    
+    pass
 
 
 def show_random(data, lables, denorm: bool = True,
